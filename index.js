@@ -9,7 +9,7 @@ const questions = [
             name: 'characters',
             validate: input => {
                 if (input.length > 3) {
-                    console.log('Your logo cannot contain more than 3 characters')
+                    console.log(' Your logo cannot contain more than 3 characters')
                     return false
                 } else {
                     return true
@@ -36,14 +36,11 @@ const questions = [
 function init() {
     inquirer.prompt(questions)
         .then((response) => {
-            console.log('then')
-            console.log('response= ', response)
             generateSVG(response.characters, response.shape, response.color)
 });
 }
 
 function generateSVG(characters, shape, color) {
-    console.log(characters, shape, color)
     let newShape;
     let code;
     switch (shape) {
